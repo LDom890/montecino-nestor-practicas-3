@@ -9,3 +9,13 @@
 
 - Repositorio Practica 3er Parcial Netlyfy 
 [LinkGithub](https://github.com/LDom890/SitioWebAstro)
+
+- Link NetlyFy
+[LinkNetlyfy](https://main--grand-mermaid-9c9c7f.netlify.app/)
+
+
+- Practica 3er Parcial Vercel
+[LinkVercel](https://sitio-web-astro.vercel.app/)
+
+
+
