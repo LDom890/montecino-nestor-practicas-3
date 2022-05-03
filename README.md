@@ -5,18 +5,7 @@
 - ![Foto mia](multimedia/domer.jpg)<br>
 
 
-## Comandos Para Iniciar Un Repositorio De Forma Remota
-- mkdir carpetaenuso
-- cd carpetaenuso
-- touch README.md
-- touch .gitignore
-- git init
-- git status
+## Links de entrega 
 
-## Comandos Para Agregar Cambios a Un Repositorio
-- mkdir carpetaenuso
-- cd carpetaenuso
-- git clone + Linkdelrepositorio
-- git add .
-- git commit -m + nombredelcommit
-- git push
+- Repositorio Practica 3er Parcial Netlyfy 
+[LinkGithub](https://github.com/LDom890/SitioWebAstro)
