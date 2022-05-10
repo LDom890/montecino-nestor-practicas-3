@@ -32,15 +32,15 @@
 - id_servicio (PK)
 - data_servicio
 - tipo_servicio
-- user_0 (FK)
-- user_1 (FK)
+- user (FK)
+- user_worker (FK)
 - status
 
 ### Reseña
 - id (PK)
 - fecha
 - hora
-- cometario
+- comentario
 - cantidad_estrellas (CAT)
 - id_emisor
 - id_receptor
