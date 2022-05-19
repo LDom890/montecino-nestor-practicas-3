@@ -61,4 +61,4 @@
 
 ### Modelo Relacional
 
-![Modelo_Relacional](multimedia/ModeloR.png)
+![Modelo_Relacional](multimedia/ModeloRe.png)
