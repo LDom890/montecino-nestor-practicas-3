@@ -88,7 +88,8 @@ create table users(
     password VARCHAR(255)NOT NULL,
     phone VARCHAR(20)UNIQUE NOT NULL, 
     age DATE,
-    /*pendiente agregar ubicacion*/
+    ubicacion_latitud VARCHAR(55),
+    ubicacion_longitud VARCHAR(55),
     avatar VARCHAR(255)
 
 
