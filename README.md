@@ -25,7 +25,7 @@
 - Link base de datos Excel
 [Base de datos Excel](https://github.com/LDom890/montecino-nestor-practicas-3/blob/main/ExcelBD.xlsx)
 
-- Link base de datos Excel
+- Link base de datos SQL
 [Base de datos SQL](https://github.com/LDom890/montecino-nestor-practicas-3/blob/main/Domber.sql)
 
 
