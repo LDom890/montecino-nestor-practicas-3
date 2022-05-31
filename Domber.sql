@@ -40,10 +40,9 @@ client_id INTEGER UNSIGNED
 
 create table services(
 service_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-hour_date DATETIME NOT NULL,
 date_service DATETIME NOT NULL,
-users1 INTEGER UNSIGNED,
-users2 INTEGER UNSIGNED,
+users1 INTEGER UNSIGNED Not Null,
+users2 INTEGER UNSIGNED Not Null,
 status_id INTEGER UNSIGNED,
 
 FOREIGN KEY(users1)
@@ -55,7 +54,7 @@ FOREIGN KEY(users2)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
 FOREIGN KEY(status_id)
-    REFERENCES status_id(status_id)
+    REFERENCES on_status(status_id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 ) Engine=innoDB DEFAULT charset=utf8mb4;
@@ -67,9 +66,9 @@ create table comentary(
 comentary_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 comentary_date DATETIME NOT NULL,
 comentary_text TEXT NOT NULL,
-users1 VARCHAR(50)NOT NULL,
+users1 INTEGER UNSIGNED Not Null,
 FOREIGN KEY(users1)
-    REFERENCES user(users1)
+    REFERENCES users1(users1)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 
@@ -82,23 +81,23 @@ create table review(
 review_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 review_date DATETIME NOT NULL,
 hour_date DATETIME NOT NULL,
-comentary_id VARCHAR(255),
-users1 VARCHAR(255),
-service_id VARCHAR(255),
+comentary_id INTEGER UNSIGNED NOT NULL,
+users1 INTEGER UNSIGNED NOT NULL,
+service_id INTEGER UNSIGNED NOT NULL,
 FOREIGN KEY(comentary_id)
     REFERENCES comentary(comentary_id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
 FOREIGN KEY(users1)
-    REFERENCES user(users1)
+    REFERENCES users1(users1)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
 FOREIGN KEY(users1)
-    REFERENCES userr(users1)
+    REFERENCES users1(users1)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
 FOREIGN KEY(service_id)
-    REFERENCES userr(service_id)
+    REFERENCES services(service_id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE            
 ) Engine=innoDB DEFAULT charset=utf8mb4;
