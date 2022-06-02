@@ -62,3 +62,43 @@
 ### Modelo Relacional
 
 ![Modelo_Relacional](multimedia/ModeloRe.png)
+
+### Reglas de negocio
+
+
+#### User
+
+- User crea cuenta
+- User valida user
+- User actualiza datos
+- User actualiza password
+- User elimina cuenta
+
+#### Cuantity Stars
+
+- User crea Cuantity_Stars
+- User elimina Cuantity_Stars
+#### On status
+
+- User crea status
+- User actualiza status
+
+#### User Type
+
+- User crea tipo de usuario
+
+#### Services
+
+- User pide servicio
+
+#### Comentary
+
+- User crea comentario
+- User actualiza comentario
+- User borra comentario
+
+#### Review
+
+- User crea Review
+- User borra Review
+

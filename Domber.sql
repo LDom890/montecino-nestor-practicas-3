@@ -4,6 +4,18 @@ CREATE DATABASE if not EXISTS uberdatabase;
 
 use uberdatabase;
 
+CREATE TABLE cuantity_stars(
+  cuantity_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  star INTEGER UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO cuantity_stars (cuantity_id, star) VALUES
+  (1, 'una'),
+  (2, 'dos'),
+  (3, 'tres'),
+  (4, 'cuatro'),
+  (5, 'cinco');
+  
 
 
 create table users1(
@@ -34,8 +46,8 @@ status_name VARCHAR(50)
 
 create table user_type(
 user_type_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,    
-worker_id INTEGER UNSIGNED,
-client_id INTEGER UNSIGNED 
+worker_id INTEGER UNSIGNED auto_increment,
+client_id INTEGER UNSIGNED auto_increment 
 ) Engine=innoDB DEFAULT charset=utf8mb4;
 
 create table services(
