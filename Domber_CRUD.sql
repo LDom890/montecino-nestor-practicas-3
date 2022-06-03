@@ -9,19 +9,19 @@ DELETE FROM cuantity_stars WHERE cuantity_id = 1;
 
 
 /* 1. Crear _users1_. */
-INSERT INTO users1 (users1, user_date, user_name, email, password, phone, age, ubicacion_latitud, ubicacion_longitud, avatar, user_type ) VALUES 
-  ('@elpedro', NOW(),"PedroUwu", 'elPedro@gmail.com', SHA1('pedro1234'),'5487986532',"20", "560.56", "876.543", "https://pedro.com/img/pedro.jpg", "Driver" );
+INSERT INTO users1 (user_date, user_name, email, password, phone, age, avatar) VALUES 
+  (NOW(),"PedroUwu", 'elPedro@gmail.com', SHA1('pedro1234'),'5487986532',"20", "https://pedro.com/img/pedro.jpg");
 
 /* 1. Leer todos los _users1_. */
 SELECT * FROM users1;
-SELECT user, email  FROM users1;
+SELECT users_id, email  FROM users1;
 /* 1. Leer un _users1_. */ 
 SELECT * FROM users1 WHERE email = 'elPedro@gmail.com';
-SELECT user, email  FROM users WHERE user = '@elpedro';
+SELECT users_id, email  FROM users1 WHERE users_id = '@elpedro';
 
 /* 1. Validar un _users1_. */
-SELECT * FROM users
-  WHERE (user = '@elpedro' OR email = 'elPedro@gmail.com' OR phone = '5487986532') AND password = SHA1('pedro1234');
+SELECT * FROM users1
+  WHERE (users_id = '@elpedro' OR email = 'elPedro@gmail.com' OR phone = '5487986532') AND password = SHA1('pedro1234');
 
 
 /* 1. Actualizar datos del _users1_. */
@@ -31,40 +31,49 @@ UPDATE users1
     avatar = "https://pedro.com/img/pedro.jpg", 
     age = "22",
     phone = '5487989532'
-  WHERE user = "@elpedro";
+  WHERE users_id = "@elpedro";
 
 /* 1. Actualizar _password_ de _users1_. */
 UPDATE users1
   SET password = SHA1("nuevo password")
-  WHERE user = "@elpedro";
+  WHERE users_id = "@elpedro";
 
-/* 1. Eliminar _user_. */
+/* 1. Eliminar _user1_. */
 DELETE FROM users1
-  WHERE user = '@elpedro';
+  WHERE users_id = '@elpedro';
 
-INSERT INTO users1 (users1, user_date, user_name, email, password, phone, age, ubicacion_latitud, ubicacion_longitud, avatar, user_type)
-  VALUES
-    ( '@testi', NOW(), "testi", 'testi@gmail.com', SHA1('testi'), "5512345679", "30", "https://testi.com/img/testi.jpg", "15243" ),
-    ( '@testii', NOW(), "testii", 'testii@gmail.com', SHA1('testii'), "5512345670", "40", "https://testii.com/img/testii.jpg", "15244" ),
-    ( '@testiiii', NOW(), "testiiiii", 'testiiiiii@gmail.com', SHA1('testityi'), "5512345550", "23", "https://testii.com/img/testiidf.jpg", "15244" ),
-    ( '@testiiiii', NOW(), "testiiiiii", 'testiity@gmail.com', SHA1('testityi'), "5557012346", "60", "https://testii.com/img/testidfi.jpg", "15244" ),
-    ( '@testiii', NOW(), "testiii", 'testiii@gmail.com', SHA1('testiii'), "5512345677", "35", "https://testiii.com/img/testiii.jpg", "15245" );
+/* Crear 5 _user1_. */
+INSERT INTO users1 (user_date, user_name, email, password, phone, age, avatar)
+VALUES
+    (NOW(), "testi", 'testi@gmail.com', SHA1('testi'), "5512345679", "30", "https://testi.com/img/testi.jpg"),
+    (NOW(), "testii", 'testii@gmail.com', SHA1('testii'), "5512345670", "40", "https://testii.com/img/testii.jpg" ),
+    (NOW(), "testiiiii", 'testiiiiii@gmail.com', SHA1('testityi'), "5512345550", "23", "https://testii.com/img/testiidf.jpg"),
+    (NOW(), "testiiiiii", 'testiity@gmail.com', SHA1('testityi'), "5557012346", "60", "https://testii.com/img/testidfi.jpg"),
+    (NOW(), "testiii", 'testiii@gmail.com', SHA1('testiii'), "5512345677", "35", "https://testiii.com/img/testiii.jpg");
+/* Crear 5 _user0_. */
+INSERT INTO users0 (user_date, user_name, email, password, phone, age, avatar)
+VALUES
+    (NOW(), "testi", 'testni@gmail.com', SHA1('testi'), "5512345679", "30", "https://testi.com/img/testi.jpg"),
+    (NOW(), "testii", 'tesntii@gmail.com', SHA1('testii'), "5512345670", "40", "https://testii.com/img/testii.jpg" ),
+    (NOW(), "testiiiii", 'testiiiniii@gmail.com', SHA1('testityi'), "5512345550", "23", "https://testii.com/img/testiidf.jpg"),
+    (NOW(), "testiiiiii", 'testinity@gmail.com', SHA1('testityi'), "5557012346", "60", "https://testii.com/img/testidfi.jpg"),
+    (NOW(), "testiii", 'testniii@gmail.com', SHA1('testiii'), "5512345677", "35", "https://testiii.com/img/testiii.jpg");
 
 /* On status */
 
 /* Crear  on_status de un user1 */
-INSERT INTO  on_status ( status_id, status_name)
+INSERT INTO  on_status (status_name)
   VALUES
-    ("1", 'Ondrive' ),
-    ("2", 'Onwait' ),
-    ("3",'Onway' );
+    ('Ondrive'),
+    ('Onwait'),
+    ('Finished');
     
 
 /* Actualiza on_status de un user1 */
 UPDATE on_status
   SET
     status_name = "Onwait"
-  WHERE user = "@elpedro";
+  WHERE users_id = 6;
 
 
 
@@ -73,36 +82,36 @@ UPDATE on_status
 
 
 /* Crear Tipo de usuario */
-INSERT INTO user_type ( user_type_id, worker_id, client_id )
+INSERT INTO user_type ( worker_id, client_id )
   VALUES
-    ("1", '1', '5' ),
-    ("2", '2', '4' ),
-    ("3", '3', '3' ),
-    ("4", '4', '2' ),
-    ("5", '5', '1' );
+    ('15245', '15244' ),
+    ('15245', '15244' ),
+    ('15245', '15244' ),
+    ('15245', '15244' ),
+    ('15245', '15244' );
 
 
 /* Service */
 
 /* Crear un Services */
-INSERT INTO services ( service_id, date_service, users1, users2, status_id )
+INSERT INTO services (date_service, user_id, other_id)
   VALUES
-    ( 1, NOW(), 'testi', 'testii', "Ondrive" ),
-    ( 2, NOW(), 'testii', 'testi','Onway' ),
-    ( 3, NOW(), 'testiii', 'testii','Onway' ),
-    ( 4, NOW(), 'testiiii', 'testi','Ondrive' ),
-    ( 5, NOW(), 'testi', 'testiii','Ondrive' );
+    (NOW(), 1, 3),
+    (NOW(), 3, 2),
+    (NOW(), 2, 1),
+    (NOW(), 1, 3),
+    (NOW(), 3, 2);
    
 /* Commentary */
 
 /* Crear un Commentary */
-INSERT INTO comentary ( comentary_id, comentary_date, users1, comentary_text  )
+INSERT INTO comentary (comentary_date, users1)
   VALUES
-    ( 1, NOW(), 'testi', 'blabla'),
-    ( 2, NOW(), 'testii', 'nn'),
-    ( 3, NOW(), 'testiii', 'holahola'),
-    ( 4, NOW(), 'testiiii', 'blabla' ),
-    ( 5, NOW(), 'testi', 'x y z');
+    (NOW(), 'testi'),
+    (NOW(), 'testii'),
+    (NOW(), 'testiii'),
+    (NOW(), 'testiiii'),
+    (NOW(), 'testi');
    
 
 /* Leer un comment de un post */
@@ -118,22 +127,21 @@ DELETE FROM comentary
 /* Review */
 
 /* Crear Review*/
-INSERT INTO review ( heart_date, post_id, user )
+INSERT INTO review( review_date, other_id, users_id)
   VALUES
-    ( NOW(), 1, '@jonmircha' ),
-    ( NOW(), 1, '@test1' ),
-    ( NOW(), 1, '@test2' ),
-    ( NOW(), 1, '@test3' ),
-    ( NOW(), 2, '@jonmircha' ),
-    ( NOW(), 2, '@test1' ),
-    ( NOW(), 4, '@test2' ),
-    ( NOW(), 4, '@test3' );
+    ( NOW(), 1, 2),
+    ( NOW(), 3, 1),
+    ( NOW(), 2, 3),
+    ( NOW(), 1, 4),
+    ( NOW(), 3, 1),
+    ( NOW(), 1, 2),
+    ( NOW(), 2, 3),
+    ( NOW(), 1, 2);
 
 /*Ver Review */
-SELECT COUNT(*) as likes FROM hearts
-  WHERE post_id = 1;
+SELECT * FROM review
+  WHERE review_id = 1;
 
 /* Eliminar Review */
 DELETE FROM review
-  WHERE heart_id = 5
-    AND user = '@jonmircha';
+  WHERE review_id = 5;
