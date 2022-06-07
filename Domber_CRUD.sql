@@ -94,24 +94,24 @@ INSERT INTO user_type ( worker_id, client_id )
 /* Service */
 
 /* Crear un Services */
-INSERT INTO services (date_service, user_id, other_id)
+INSERT INTO services (date_service)
   VALUES
-    (NOW(), 1, 3),
-    (NOW(), 3, 2),
-    (NOW(), 2, 1),
-    (NOW(), 1, 3),
-    (NOW(), 3, 2);
+    (NOW()),
+    (NOW()),
+    (NOW()),
+    (NOW()),
+    (NOW());
    
 /* Commentary */
 
 /* Crear un Commentary */
-INSERT INTO comentary (comentary_date, users1)
+INSERT INTO comentary (comentary_date)
   VALUES
-    (NOW(), 'testi'),
-    (NOW(), 'testii'),
-    (NOW(), 'testiii'),
-    (NOW(), 'testiiii'),
-    (NOW(), 'testi');
+    (NOW()),
+    (NOW()),
+    (NOW()),
+    (NOW()),
+    (NOW());
    
 
 /* Leer un comment de un post */
@@ -127,16 +127,16 @@ DELETE FROM comentary
 /* Review */
 
 /* Crear Review*/
-INSERT INTO review( review_date, other_id, users_id)
+INSERT INTO review( review_date, hour_date)
   VALUES
-    ( NOW(), 1, 2),
-    ( NOW(), 3, 1),
-    ( NOW(), 2, 3),
-    ( NOW(), 1, 4),
-    ( NOW(), 3, 1),
-    ( NOW(), 1, 2),
-    ( NOW(), 2, 3),
-    ( NOW(), 1, 2);
+    ( NOW(), NOW()),
+    ( NOW(), NOW()),
+    ( NOW(), NOW()),
+    ( NOW(), NOW()),
+    ( NOW(), NOW()),
+    ( NOW(), NOW()),
+    ( NOW(), NOW()),
+    ( NOW(), NOW());
 
 /*Ver Review */
 SELECT * FROM review

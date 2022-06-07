@@ -79,8 +79,8 @@ create table users0(
 create table services(
 service_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 date_service DATETIME NOT NULL,
-user_id INTEGER UNSIGNED Not Null,
-other_id INTEGER UNSIGNED Not Null,
+user_id INTEGER UNSIGNED,
+other_id INTEGER UNSIGNED,
 status_id INTEGER UNSIGNED,
 
 FOREIGN KEY(user_id)
@@ -104,7 +104,7 @@ create table comentary(
 comentary_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 comentary_date DATETIME NOT NULL,
 comentary_text TEXT,
-users1 INTEGER UNSIGNED Not Null,
+users1 INTEGER UNSIGNED,
 FOREIGN KEY(users1)
     REFERENCES users1(users_id)
     ON DELETE RESTRICT
@@ -118,20 +118,20 @@ FOREIGN KEY(users1)
 create table review(
 review_id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 review_date DATETIME NOT NULL,
-hour_date DATETIME,
+hour_date DATETIME NOT NULL,
 comentary_id INTEGER UNSIGNED,
-users_id INTEGER UNSIGNED NOT NULL,
-other_id INTEGER UNSIGNED NOT NULL,
+user_id INTEGER UNSIGNED,
+other_id INTEGER UNSIGNED,
 service_id INTEGER UNSIGNED,
 FOREIGN KEY(comentary_id)
     REFERENCES comentary(comentary_id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-FOREIGN KEY(users_id)
+FOREIGN KEY(user_id)
     REFERENCES users1(users_id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-    FOREIGN KEY(other_id)
+FOREIGN KEY(other_id)
     REFERENCES users0(users_id)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
