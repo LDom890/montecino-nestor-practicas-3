@@ -2,7 +2,7 @@
 
 - Nombre: Nestor Camilo Montecino Sainz
 - Correo Electronico: montecinonestor890@gmail.com
-[comment]: <> (- ![Foto mia](multimedia/domer.jpg)<br>)
+- ![Foto mia](multimedia/domer.jpg)<br>
 
 
 ## Links de entrega 
